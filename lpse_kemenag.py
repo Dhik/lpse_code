@@ -1,9 +1,10 @@
 import scrapy
 import pandas as pd
 
+
 class LPSE(scrapy.Spider):
   name = 'lpse'
-  start_urls = ['https://lpse.pu.go.id/']
+  start_urls = ['https://lpse.kemenag.go.id/eproc4']
 
   def parse(self, response):
     # print(response.body)
@@ -30,7 +31,7 @@ class LPSE(scrapy.Spider):
           n.append(nama)
           h.append(hps)
           a.append(akhir_pendaftaran)
-          l.append('https://lpse.pu.go.id'+link)
+          l.append('https://lpse.kemenag.go.id/eproc4'+link)
       # else:
       #   print('not pass')
       # print("==============")
@@ -41,5 +42,5 @@ class LPSE(scrapy.Spider):
     data['HPS'] = h
     data['akhir pendaftaran'] = a
     data['link'] = l
-    data['penyelenggara'] = "lpse pu"
-    data.to_excel("lpse_pu.xlsx")
+    data['penyelenggara'] = "lpse jakarta"
+    data.to_excel("lpse_kemenag.xlsx")

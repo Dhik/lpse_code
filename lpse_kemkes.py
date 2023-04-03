@@ -31,7 +31,7 @@ class LPSE(scrapy.Spider):
           n.append(nama)
           h.append(hps)
           a.append(akhir_pendaftaran)
-          l.append('https://lpse.lkpp.go.id'+link)
+          l.append('https://lpse.kemkes.go.id'+link)
       # else:
       #   print('not pass')
       # print("==============")
@@ -42,4 +42,5 @@ class LPSE(scrapy.Spider):
     data['HPS'] = h
     data['akhir pendaftaran'] = a
     data['link'] = l
-    data.to_excel("lpse_lkpp.xlsx")
+    data['penyelenggara'] = "lpse kemkes"
+    data.to_excel("lpse_kemkes.xlsx")

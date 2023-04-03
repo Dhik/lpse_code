@@ -42,4 +42,5 @@ class LPSE(scrapy.Spider):
     data['HPS'] = h
     data['akhir pendaftaran'] = a
     data['link'] = l
+    data['penyelenggara'] = "lpse kemdikbud"
     data.to_excel("lpse_kemdikbud.xlsx")
